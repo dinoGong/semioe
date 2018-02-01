@@ -1,0 +1,136 @@
+body{
+  background-color: #486b96;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  background-position: center 0;
+}
+/* 头部区域 */
+#header{
+  height: 152px;
+  width: 1210px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+/* logo */
+#header #logo{
+  width: 224px;
+  height: 100px;
+  overflow: hidden;
+  float: left;
+  clear: left;
+}
+/* logo图片 */
+#header #logo img{
+  width: 224px;
+  height: 100px;
+}
+/* 用户导航栏 */
+#header .user_nav{
+  background: #fff;
+  width: 986px;
+  height: 100px;
+  float: right;
+  clear: right;
+  overflow: hidden;
+}
+/* 用户头像区域 */
+#header .user_nav .user_avatar{
+  width: 38px;
+  height: 100px;
+  float: right;
+}
+/* 用户头像 */
+#header .user_nav .user_avatar img{
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin: 30px 0px 0px 5px;
+}
+
+/* 登录链接 */
+#header .user_nav .login_link{
+  float: right;
+  margin: 35px 5px 0px 5px;
+}
+/* 用户登录后的链接 */
+#header .user_nav .user_nav_link{
+  float: right;
+  margin: 35px 20px 0px 0px;
+}
+
+/* 菜单总栏 */
+#header .menu_nav{
+  width: 100%;
+  height: 52px;
+  float: left;
+  clear: left;
+  overflow: hidden;
+}
+/* 菜单栏总返回区域可做面包链 */
+#header .menu_nav .menu_nav_return_area{
+  float: left;
+  clear: left;
+  width: 224px;
+  height: 52px;
+  background-color: #359e33;
+}
+/* 总菜单栏返回链接 */
+#header .menu_nav .menu_nav_return_area #menu_nav_return_link{
+  color: #fff;
+  font-size: 18px;
+  margin: 15px 0px 0px 15px;
+  display: block;
+}
+/* 总菜单栏链接区域 */
+#header .menu_nav .menu_nav_links_area{
+  height: 52px;
+  /*width: 750px;*/
+  width: 986px;
+  float: left;
+  background: #fff;
+  border-top: solid 1px #ccc;
+  border-bottom: solid 1px #ccc;
+}
+/* 总菜单栏链接区域a：link标签 */
+#header .menu_nav .menu_nav_links_area .menu_nav_link{
+  margin: 16px 0px 0px 20px;
+  display: block;
+  height: 30px;
+  float: left;
+  color: #222;
+}
+/* 导航栏搜索区域 */
+#header .menu_nav .menu_nav_links_area .search_area{
+  width: 234px;
+  height: 52px;
+  float: right;
+  clear: right;
+  overflow: hidden;
+}
+/* 搜索input */
+#header .menu_nav .menu_nav_links_area .search_area .key_input{
+  width: 184px;
+  height: 34px;
+  border: solid 1px #4bad50;
+  margin: 8px 0px 0px 4px;
+}
+/* 搜索按钮 */
+#header .menu_nav .menu_nav_links_area .search_area .search_button{
+  float: right;
+  background: #4bad50;
+  border: none;
+  color: #fff;
+  display: block;
+  width: 38px;
+  height: 34px;
+  margin: 8px 8px 0px 0px;
+}
+
+
+
+/* footer 底部 */
+#footer{
+  background: #474443;
+  height: 200px;
+  margin: 20px auto;
+}

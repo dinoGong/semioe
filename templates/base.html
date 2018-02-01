@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-3.3.7-dist/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='bootstrap-3.3.7-dist/js/bootstrap.min.js') }}"></script>
+  {% if title %}
+  <title>{{ title }}</title>
+  {% endif %}
+</head>
+<body>
+  <div id="header">
+    <div id="logo">
+      <a href="/"><img src="{{ url_for('static', filename='logo.png') }}" alt=""></a>
+    </div>
+    <div class="user_nav">
+      {% if "username" in session %}
+        <div class="user_avatar">
+          <img src="{{ url_for('static', filename='avatar.jpg') }}" alt="">
+        </div>
+        <div id="user_name" class="user_nav_link">
+          {{ session['username'] }}
+        </div>
+        <a class="user_nav_link" href="/face_detect">脸部识别</a>
+        <a class="user_nav_link" href="/face_match">脸部对比</a>
+        <a class="user_nav_link" href="/logout">退出</a>
+      {% else %}
+        <a href="/login" class="login_link">登录</a>
+      {% endif %}
+    </div>
+    <div class="menu_nav">
+      <div class="menu_nav_return_area">
+        <a id="menu_nav_return_link" href="#">全部课程</a>
+      </div>
+      <div class="menu_nav_links_area">
+        <a class="menu_nav_link" href="#">大咖教学</a>
+        <a class="menu_nav_link" href="#">区块链+医疗</a>
+        <a class="menu_nav_link" href="#">区块链+教育</a>
+        <a class="menu_nav_link" href="#">企业培训</a>
+        <a class="menu_nav_link" href="#">下载APP</a>
+        <div class="search_area">
+          <input type="text" class="key_input" name="key" placeholder="搜索" value="">
+          <button class="search_button" type="button" name="button">
+            <img src="{{ url_for('static', filename='search_button.png') }}" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="content">
+    {% block content %}{% endblock %}
+  </div>
+  <div id="footer"></div>
+</body>
+</html>

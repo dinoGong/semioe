@@ -1,0 +1,382 @@
+{% extends "base.html" %}
+{% block content %}
+<style media="screen">
+#content .menu{
+  width: 1210px;
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#content .menu .menu_list{
+  background: #000;
+  width: 224px;
+  height: 400px;
+  overflow: hidden;
+  float: left;
+}
+#content .menu .menu_list .menu_item_area{
+  width: 100%;
+  height: 57px;
+  color: #fff;
+  overflow: hidden;
+}
+#content .menu .menu_list .menu_item_area:last-child{
+  height: 58px;
+}
+#content .menu .menu_list .menu_item_area:hover{
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+}
+#content .menu .menu_list .menu_item_area a{
+  color: #fff;
+}
+#content .menu .menu_list .menu_item_area:hover a{
+  color: #000;
+}
+#content .menu .menu_list .menu_item_area .menu_item{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  width: 90%;
+  margin: 0 auto;
+  height: 57px;
+  overflow: hidden;
+}
+
+#content .menu .menu_list .menu_item_area .menu_item .item_main_link{
+  font-size: 18px;
+  margin: 18px 0px 0px 8px;
+  display: block;
+  float: left;
+}
+#content .menu .menu_list .menu_item_area .menu_item .item_sub_link{
+  font-size: 14px;
+  margin: 22px 0px 0px 8px;
+  display: block;
+  float: left;
+}
+
+#content .menu .menu_tabs{
+  width: 986px;
+  height: 400px;
+  float: right;
+}
+#content .menu .menu_tabs .menu_index,#content .menu .menu_tabs .menu_tab{
+  width: 986px;
+  height: 400px;
+  background: #fff;
+}
+#content .menu .menu_tabs .menu_tab{
+  display: none;
+}
+
+#content .menu .menu_tabs .menu_index img{
+    border: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#content .roll_menu{
+  width: 1210px;
+  height: 110px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #fff;
+  border-bottom: solid 1px #ccc;
+}
+#content .roll_menu .roll_menu_item{
+  width: 242px;
+  height: 110px;
+  margin: 0 auto;
+  overflow: hidden;
+  float: left;
+}
+
+#content .roll_menu .roll_menu_item_icon_area{
+  height: 110px;
+  width: 64px;
+  float: left;
+}
+#content .roll_menu .roll_menu_item_icon_area img {
+    border: 0;
+    margin: 40px 0px 0px 32px;
+}
+#content .roll_menu .roll_menu_item_link_area{
+  height: 60px;
+  width: 160px;
+  float: left;
+  border-right: solid 1px rgba(0, 0, 0, 0.2);
+  margin: 25px 0px 0px 10px;
+}
+#content .roll_menu .roll_menu_item_link_area:last-child{
+  border-right: none;
+}
+#content .roll_menu .roll_menu_item_link_area .roll_menu_item_link_title{
+  width: 110px;
+  height: 18px;
+  float: left;
+  color: #000;
+  font-size: 16px;
+  overflow: hidden;
+  margin: 8px 0px 0px 0px;
+}
+#content .roll_menu .roll_menu_item_link_area .roll_menu_item_link_sub_title{
+  float: left;
+  clear: left;
+  width: 110px;
+  height: 30px;
+  color: #ccc;
+  overflow: hidden;
+  font-size: 14px;
+  margin: 5px 0px 0px 0px;
+}
+#content .class{
+  width: 1210px;
+  height: 190px;
+  margin: 20px auto;
+  background-color: #fff;
+}
+#content .class .more{
+  width: 225px;
+  height: 190px;
+  float: left;
+  overflow: hidden;
+}
+#content .class .more img{
+  width: 225px;
+  height: 190px;
+  float: left;
+  overflow: hidden;
+}
+
+#content .class .class_item{
+  float: right;
+  width: 230px;
+  height: 190px;
+  margin: 0px 0px 0px 15px;
+  overflow: hidden;
+}
+#content .class .class_item .class_item_img_area{
+  width: 230px;
+  height: 144px;
+  overflow: hidden;
+}
+#content .class .class_item .class_item_img_area .class_item_img{
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+#content .class .class_item .class_item_text_area{
+
+}
+#content .class .class_item .class_item_text_area .title{
+  width: 100%;
+  float: left;
+  margin: 3px 0px 0px 0px;
+  color: #222;
+}
+#content .class .class_item .class_item_text_area .sub_title{
+  width: 100%;
+  float: left;
+  margin: 1px 0px 0px 0px;
+  color: #ccc;
+}
+</style>
+<div class="menu">
+  <div class="menu_list">
+    <div class="menu_item_area" for="menu_tab_index_1">
+      <div class="menu_item">
+        <a class="item_main_link" href="#">效率</a>
+        <a class="item_sub_link" href="#">PPT</a>
+        <a class="item_sub_link" href="#">Excel</a>
+      </div>
+    </div>
+    <div class="menu_item_area" for="menu_tab_index_2">
+      <div class="menu_item">
+        <a class="item_main_link" href="#">健康</a>
+        <a class="item_sub_link" href="#">糖尿病</a>
+        <a class="item_sub_link" href="#">高血压</a>
+      </div>
+    </div>
+    <div class="menu_item_area" for="menu_tab_index_3">
+      <div class="menu_item">
+        <a class="item_main_link" href="#">运动</a>
+        <a class="item_sub_link" href="#">自行车</a>
+        <a class="item_sub_link" href="#">瑜伽</a>
+      </div>
+    </div>
+    <div class="menu_item_area" for="menu_tab_index_4">
+      <div class="menu_item">
+        <a class="item_main_link" href="#">创业</a>
+        <a class="item_sub_link" href="#">物联网</a>
+        <a class="item_sub_link" href="#">区块链</a>
+      </div>
+    </div>
+    <div class="menu_item_area" for="menu_tab_index_5">
+      <div class="menu_item">
+        <a class="item_main_link" href="#">智能</a>
+        <a class="item_sub_link" href="#">人脸识别</a>
+        <a class="item_sub_link" href="#">人脸对比</a>
+      </div>
+    </div>
+    <div class="menu_item_area" for="menu_tab_index_6">
+      <div class="menu_item">
+        <a class="item_main_link" href="#">生活</a>
+        <a class="item_sub_link" href="#">婚姻</a>
+        <a class="item_sub_link" href="#">职场</a>
+      </div>
+    </div>
+    <div class="menu_item_area" for="menu_tab_index_7">
+      <div class="menu_item">
+        <a class="item_main_link" href="#">效率</a>
+        <a class="item_sub_link" href="#">PPT</a>
+        <a class="item_sub_link" href="#">Excel</a>
+      </div>
+    </div>
+  </div>
+  <div class="menu_tabs">
+    <div class="menu_index">
+      <img src="{{ url_for('static', filename='banner.jpg') }}" alt="">
+    </div>
+    <div class="menu_tab" id="menu_tab_index_1">
+      1
+    </div>
+    <div class="menu_tab" id="menu_tab_index_2">
+      2
+    </div>
+    <div class="menu_tab" id="menu_tab_index_3">
+      3
+    </div>
+    <div class="menu_tab" id="menu_tab_index_4">
+      4
+    </div>
+    <div class="menu_tab" id="menu_tab_index_5">
+      5
+    </div>
+    <div class="menu_tab" id="menu_tab_index_6">
+      6
+    </div>
+    <div class="menu_tab" id="menu_tab_index_7">
+      7
+    </div>
+  </div>
+</div>
+<div class="roll_menu">
+  <div class="roll_menu_item">
+    <div class="roll_menu_item_icon_area">
+      <img class="roll_menu_item_icon" src="{{ url_for('static', filename='icons/aim.png') }}" alt="">
+    </div>
+    <div class="roll_menu_item_link_area">
+      <a href="#" class="roll_menu_item_link_title">临床医学原理</a>
+      <a href="#" class="roll_menu_item_link_sub_title">姚教授亲授</a>
+    </div>
+  </div>
+
+  <div class="roll_menu_item">
+    <div class="roll_menu_item_icon_area">
+      <img class="roll_menu_item_icon" src="{{ url_for('static', filename='icons/love.png') }}" alt="">
+    </div>
+    <div class="roll_menu_item_link_area">
+      <a href="#" class="roll_menu_item_link_title">道家养生课</a>
+      <a href="#" class="roll_menu_item_link_sub_title">道长下凡授课</a>
+    </div>
+  </div>
+
+  <div class="roll_menu_item">
+    <div class="roll_menu_item_icon_area">
+      <img class="roll_menu_item_icon" src="{{ url_for('static', filename='icons/car.png') }}" alt="">
+    </div>
+    <div class="roll_menu_item_link_area">
+      <a href="#" class="roll_menu_item_link_title">智能产品开发手册</a>
+      <a href="#" class="roll_menu_item_link_sub_title">牛逼产品告诉你</a>
+    </div>
+  </div>
+
+  <div class="roll_menu_item">
+    <div class="roll_menu_item_icon_area">
+      <img class="roll_menu_item_icon" src="{{ url_for('static', filename='icons/book.png') }}" alt="">
+    </div>
+    <div class="roll_menu_item_link_area">
+      <a href="#" class="roll_menu_item_link_title">旅行青蛙作弊大法</a>
+      <a href="#" class="roll_menu_item_link_sub_title">狂刷三叶草</a>
+    </div>
+  </div>
+
+  <div class="roll_menu_item">
+    <div class="roll_menu_item_icon_area">
+      <img class="roll_menu_item_icon" src="{{ url_for('static', filename='icons/bike.png') }}" alt="">
+    </div>
+    <div class="roll_menu_item_link_area">
+      <a href="#" class="roll_menu_item_link_title">医学流程图</a>
+      <a href="#" class="roll_menu_item_link_sub_title">一般人都不知道</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="class">
+  <div class="more">
+    <a href="#">
+      <img class="" src="{{ url_for('static', filename='more_class.png') }}" alt="">
+    </a>
+  </div>
+  <div class="class_item">
+    <div class="class_item_img_area">
+      <img class="class_item_img" src="{{ url_for('static', filename='class/1.jpg') }}" alt="">
+    </div>
+    <div class="class_item_text_area">
+      <a href="#" class="title">学习太努力容易过劳死</a>
+      <a href="#" class="sub_title">绝非危言耸听！</a>
+    </div>
+  </div>
+
+  <div class="class_item">
+    <div class="class_item_img_area">
+      <img class="class_item_img" src="{{ url_for('static', filename='class/2.jpg') }}" alt="">
+    </div>
+    <div class="class_item_text_area">
+      <a href="#" class="title">中年危机综合征</a>
+      <a href="#" class="sub_title">测测你有没有</a>
+    </div>
+  </div>
+
+  <div class="class_item">
+    <div class="class_item_img_area">
+      <img class="class_item_img" src="{{ url_for('static', filename='class/3.jpg') }}" alt="">
+    </div>
+    <div class="class_item_text_area">
+      <a href="#" class="title">会议室里的秘密</a>
+      <a href="#" class="sub_title">职场潜规则</a>
+    </div>
+  </div>
+
+  <div class="class_item">
+    <div class="class_item_img_area">
+      <img class="class_item_img" src="{{ url_for('static', filename='class/4.jpg') }}" alt="">
+    </div>
+    <div class="class_item_text_area">
+      <a href="#" class="title">3种方法养护心脏</a>
+      <a href="#" class="sub_title">天天只花5分钟</a>
+    </div>
+  </div>
+
+</div>
+<script type="text/javascript">
+  $('.menu_item_area').hover(function(){
+    $('.menu_tab').hide();
+    $('.menu_index').hide();
+    $('#'+$(this).attr('for')).show();
+  });
+  $('.menu_list').hover(
+    function(){
+    },
+    function(){
+      $('.menu_tab').hide();
+      $('.menu_index').show();
+    }
+  );
+</script>
+{% endblock %}
