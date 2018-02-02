@@ -11,6 +11,9 @@
   {% endif %}
 </head>
 <body>
+  {% if full_screen %}
+
+  {% else %}
   <div id="header">
     <div id="logo">
       <a href="/"><img src="{{ url_for('static', filename='logo.png') }}" alt=""></a>
@@ -32,14 +35,14 @@
     </div>
     <div class="menu_nav">
       <div class="menu_nav_return_area">
-        <a id="menu_nav_return_link" href="#">全部课程</a>
+        <a id="menu_nav_return_link" href="/">全部流程</a>
       </div>
       <div class="menu_nav_links_area">
-        <a class="menu_nav_link" href="#">大咖教学</a>
-        <a class="menu_nav_link" href="#">区块链+医疗</a>
-        <a class="menu_nav_link" href="#">区块链+教育</a>
-        <a class="menu_nav_link" href="#">企业培训</a>
-        <a class="menu_nav_link" href="#">下载APP</a>
+        <a class="menu_nav_link" href="#">家庭流程</a>
+        <a class="menu_nav_link" href="#">健康流程</a>
+        <a class="menu_nav_link" href="#">找流程</a>
+        <a class="menu_nav_link" href="#">流程培训</a>
+        <a class="menu_nav_link" href="#">流程定制</a>
         <div class="search_area">
           <input type="text" class="key_input" name="key" placeholder="搜索" value="">
           <button class="search_button" type="button" name="button">
@@ -49,9 +52,18 @@
       </div>
     </div>
   </div>
+  {% endif %}
+
+
+
   <div id="content">
     {% block content %}{% endblock %}
   </div>
-  <div id="footer"></div>
+  {% if full_screen %}
+
+  {% else %}
+    <div id="footer"></div>
+  {% endif %}
+
 </body>
 </html>

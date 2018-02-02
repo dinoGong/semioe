@@ -8,10 +8,11 @@ from flask import Blueprint
 from app.web import web
 from flask import jsonify
 import json
+import pymysql
 
 @web.route('/')
 def home():
-    return render_template('/web/default.html',title="semioe",session=session)
+    return render_template('/web/default.html',title="semioe云流程",session=session)
 @web.route('/face_detect')
 def face_detect():
     if "username" in session:
@@ -37,6 +38,19 @@ def identify_user():
 @web.route('/login',methods=['GET','POST'])
 def login():
     if request.method == 'POST':
+        name=request.form['username']
+        password=request.form['password']
+        # 打开数据库连接
+        db = pymysql.connect("localhost","sqluser","123456","member" )
+        # 创建一个游标对象 cursor
+        cursor = db.cursor()
+        # 执行 SQL 查询
+        cursor.execute("SELECT * FROM member.users where name='%s'" % (name))
+        # 获取单条数据.
+        data = cursor.fetchone()
+        print ("Database version : %s " % data)
+        # 关闭数据库连接
+        db.close()
         session['username'] = request.form['username']
         return redirect(url_for('web.home'))
     return render_template('/web/login.html',title="login")
@@ -45,7 +59,7 @@ def login_with_face():
     if request.method == 'POST':
         session['username'] = request.form['username']
         return redirect(url_for('web.home'))
-    return render_template('/web/login_with_face.html',title="login")
+    return render_template('/web/login_with_face.html',title="login",full_screen=True)
 @web.route('/logout')
 def logout():
     # remove the username from the session if it's there

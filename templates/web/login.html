@@ -1,16 +1,54 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>登录</h1>
-<form action="/login" method="post">
-  <div class="form-group">
-    <label for="input_username">用户名称</label>
-    <input type="text" class="form-control" id="input_username" name="username" placeholder="用户名称">
+<style media="screen">
+#content .menu{
+  width: 1210px;
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#content .menu .menu_list{
+  background: #000;
+  width: 224px;
+  height: 400px;
+  overflow: hidden;
+  float: left;
+}
+
+#content .menu .menu_tabs{
+  width: 986px;
+  height: 400px;
+  float: right;
+}
+#content .menu .menu_tabs .menu_index{
+  width: 986px;
+  height: 400px;
+  background: #fff;
+  padding: 20px;
+}
+</style>
+<div class="menu">
+  <div class="menu_list">
+
   </div>
-  <div class="form-group">
-    <label for="input_passwd">用户密码</label>
-    <input type="password" class="form-control" id="input_passwd" name="password" placeholder="用户密码">
+  <div class="menu_tabs">
+    <div class="menu_index">
+      <h1>登录</h1>
+      <form action="/login" method="post">
+        <div class="form-group">
+          <label for="input_username">用户名称</label>
+          <input type="text" class="form-control" id="input_username" name="username" placeholder="用户名称">
+        </div>
+        <div class="form-group">
+          <label for="input_passwd">用户密码</label>
+          <input type="password" class="form-control" id="input_passwd" name="password" placeholder="用户密码">
+        </div>
+        <a href="/login_with_face">刷脸登录</a>
+        <button type="submit" class="btn btn-primary">登录</button>
+      </form>
+    </div>
   </div>
-  <a href="/login_with_face">刷脸登录</a>
-  <button type="submit" class="btn btn-primary">登录</button>
-</form>
+</div>
+
+
 {% endblock %}
