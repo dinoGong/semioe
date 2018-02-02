@@ -40,18 +40,24 @@ def login():
     if request.method == 'POST':
         name=request.form['username']
         password=request.form['password']
-        # 打开数据库连接
-        db = pymysql.connect("localhost","sqluser","123456","member" )
-        # 创建一个游标对象 cursor
-        cursor = db.cursor()
-        # 执行 SQL 查询
-        cursor.execute("SELECT * FROM member.users where name='%s'" % (name))
-        # 获取单条数据.
-        data = cursor.fetchone()
-        print ("Database version : %s " % data)
-        # 关闭数据库连接
-        db.close()
-        session['username'] = request.form['username']
+        try:
+          # 打开数据库连接
+          db = pymysql.connect("localhost","root","","member" )
+          # 创建一个游标对象 cursor
+          cursor = db.cursor()
+          # 执行 SQL 查询
+          cursor.execute("SELECT id,name,passwd,face_url,face_id FROM member.users where name='%s'" % (name))
+          # 获取单条数据.
+          data = cursor.fetchone()
+          if(data[2]==password):
+              print('login success')
+              session['username'] = request.form['username']
+          else:
+              print('passwd error')
+        except Exception as e:
+          raise e
+        finally:
+          db.close()  #关闭连接
         return redirect(url_for('web.home'))
     return render_template('/web/login.html',title="login")
 @web.route('/login_with_face',methods=['GET','POST'])
